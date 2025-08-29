@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .product-page {
+            display: flex;
+            gap: 30px;
+        }
+        .product-img {
+            width: 300px;
+        }
+        .product-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-details {
+            max-width: 600px;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c00;
+        }
+        .product-meta {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .rating {
+            margin-top: 10px;
+        }
+        .rating span {
+            color: #ffa500;
+        }
+        .price {
+            margin: 10px 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #d45d78;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #666;
+        }
+        .discount {
+            color: green;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .shipping-info {
+            color: green;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 16px;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .quantity-box {
+            margin-top: 20px;
+        }
+        .quantity-box select {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-green {
+            background-color: #006400;
+            color: white;
+            border-radius: 5px;
+        }
+        .btn-orange {
+            background-color: #ff8c00;
+            color: white;
+            border-radius: 5px;
+        }
+        .btn-outline {
+            background-color: crimson;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .product-title{
+    color: crimson;
+    background-color: cornsilk;
+}
+.hello{
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-top: 1px solid #ddd;
+    
+  
+}
+.hi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #b50909;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #b50909;
+}
+
+.footer-social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .author {
+        min-width: 100px;
+    }
+
+    .carousel-btn {
+        font-size: 1.5em;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 10px;
+    background-color: ivory;
+   
+}
+
+.logo img {
+    width: 120px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 400px;
+}
+
+.search-bar button {
+    padding: 8px;
+    font-size: 18px;
+    background-color: #e02e24;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+.nav-links {
+    padding: 18px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    border-bottom: 1px solid crimson;
+    background-color: ivory;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    border-right: 1px solid crimson;
+    
+}
+
+
+.nav-links a:hover {
+   background-color: crimson;
+   color: aliceblue;
+   border-radius: 10px;
+    border:2px #ddd;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.icons a:hover {
+    color: #e02e24;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.custom-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+}
+
+.custom-navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.custom-logo img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+.custom-search-bar {
+    width: 400px;
+    padding : 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-left: 200px;
+}
+
+.custom-search-button {
+    background-color: crimson;
+    border: none;
+    padding: 12px 12px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 6px;
+    
+}
+
+
+.custom-navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.custom-navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.custom-navbar-menu li {
+    margin: 0 10px;
+}
+
+.custom-navbar-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.custom-navbar-menu a:hover {
+    color: crimson;
+}
+
+.custom-navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+/* Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-account-icon {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    margin-right: 20px;
+}
+
+.custom-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.custom-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-dropdown-content a:hover {
+    background-color: crimson;
+    border-radius: 5px;
+}
+
+.custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+}
+
+.custom-cart-icon,
+.custom-wishlist-icon img {
+    margin-right: 20px;
+    font-size: 14px;
+    height: 20px;
+    width: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="custom-navbar">
+        <div class="custom-navbar-left">
+            <a href="#" class="custom-logo">
+                <img src="asset/images/Logo of web page.jpg" alt="BooksWagon Logo">
+            </a>
+            <input type="text" class="custom-search-bar" placeholder="Search By Title, Author, Publisher Or ISBN">
+            <button class="custom-search-button">
+                🔍Search
+            </button>
+        </div>
+            <div class="custom-navbar-icons">
+                <div class="custom-dropdown">
+                    <a href="#" class="custom-account-icon">My Account</a>
+                    <div class="custom-dropdown-content">
+                        <a href="signin.html">Sign In</a>
+                        <a href="signup.html">Sign Up</a>
+                    </div>
+                </div>
+                <a href="#" class="custom-cart-icon">🛒</a>
+                <a href="#" class="custom-wishlist-icon">❤</a>
+            </div>
+        </div>
+    </nav>
+    <div class="breadcrumb">
+        <a href="C:\Ajit Pandey @\Core_Web_design\Project\index.html">Home></a>
+    </div>
+
+    <div class="product-page">
+        <!-- Product Image -->
+        <div class="product-img">
+            <img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\7.jpg" alt="Product Image">
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+            <h1 class="product-title">THE WHISPERING THRONE </h1>
+            <p class="product-meta">Paperback | Released: 25 AUG 2000</p>
+            <p class="product-meta">By: Lysander EverhartPublisher: Draft2digital</p>
+
+            <!-- Rating -->
+            <div class="rating">
+                <span>★ ★ ★ ★ ★</span> | 8 Reviews
+            </div>
+
+            <!-- Price and Discount -->
+            <div class="price">
+                ₹350 <span class="old-price">M.R.P: 700</span>
+                <span class="discount">Save: ₹350 (50%)</span>
+            </div>
+
+            <!-- Shipping Information -->
+            <p class="shipping-info">
+                Internation|Edition<br>
+                Ships within 7-10 Business Days<br>
+                Free Shipping in India and low cost Worldwide.
+            </p>
+
+            <!-- Product Description -->
+            <div class="product-description">
+                The world's top trader's reveal the secrets of their phenomenal success! How do the world's most successful traders amass tens, hundreds of millions of dollars a year? Are they maste...
+            </div>
+
+            <!-- Quantity Selector and Buttons -->
+            <div class="quantity-box">
+                <label for="quantity">Quantity:</label>
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="product-actions">
+                <button class="btn btn-green">Add to Cart</button><br>
+                <button class="btn btn-orange">Buy Now</button><br>
+                <button class="btn btn-outline">Add to Wishlist</button><br>
+            </div>
+        </div>
+    </div>
+    <footer class="hello">
+        <div class="hi">
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Policies</h3>
+            <ul>
+                <li><a href="#">Privacy Policies</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Secure Shopping</a></li>
+                <li><a href="#">Copyright Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Help</h3>
+            <ul>
+                <li><a href="#">Payment</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Return</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Misc</h3>
+            <ul>
+                <li><a href="#">Affiliate</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\facebook-logo.png" alt="Facebook"></a>
+            <a href="#"><img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\Twitter-Symbol.png" alt="Twitter"></a>
+            <a href="#"><img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\linkedin.jpeg" alt="LinkedIn"></a>
+            <a href="#"><img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\pinterest logo.png" alt="Pinterest"></a>
+            <a href="#"><img src="C:\Ajit Pandey @\Core_Web_design\Project\asset\images\insta logo.jpeg" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>

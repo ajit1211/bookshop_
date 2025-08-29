@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Authors Carousel</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heading-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c00;
+            margin-bottom: 20px;
+        }
+
+        .track-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-element {
+            min-width: 150px;
+            margin: 0 15px;
+        }
+
+        .slider-element img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-title {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Navigation Arrows */
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        /* Disable text selection on arrow buttons */
+        .arrow-left:focus, .arrow-right:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <h2 class="heading-title">Featured Author</h2>
+        <div class="wrapper-track">
+            <button class="arrow-left" onclick="moveSlider(-1)">&#10094;</button>
+            <div class="track-container" id="track-container">
+                <!-- Clone last item -->
+                <div class="slider-element" id="clone-last">
+                    <img src="https://via.placeholder.com/100" alt="John Green">
+                    <div class="author-title">John Green</div>
+                </div>
+
+                <!-- Author 1 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Gillian Flynn">
+                    <div class="author-title">Gillian Flynn</div>
+                </div>
+
+                <!-- Author 2 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Gayle Forman">
+                    <div class="author-title">Gayle Forman</div>
+                </div>
+
+                <!-- Author 3 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Erich Segal">
+                    <div class="author-title">Erich Segal</div>
+                </div>
+
+                <!-- Author 4 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Sylvia Plath">
+                    <div class="author-title">Sylvia Plath</div>
+                </div>
+
+                <!-- Author 5 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Shashi Tharoor">
+                    <div class="author-title">Shashi Tharoor</div>
+                </div>
+
+                <!-- Author 6 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Arundhati Roy">
+                    <div class="author-title">Arundhati Roy</div>
+                </div>
+
+                <!-- Author 7 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Stephen Coonts">
+                    <div class="author-title">Stephen Coonts</div>
+                </div>
+
+                <!-- Author 8 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="William Wordsworth">
+                    <div class="author-title">William Wordsworth</div>
+                </div>
+
+                <!-- Author 9 -->
+                <div class="slider-element">
+                    <img src="https://via.placeholder.com/100" alt="Stephen King">
+                    <div class="author-title">Stephen King</div>
+                </div>
+
+                <!-- Clone first item -->
+                <div class="slider-element" id="clone-first">
+                    <img src="https://via.placeholder.com/100" alt="Gillian Flynn">
+                    <div class="author-title">Gillian Flynn</div>
+                </div>
+            </div>
+            <button class="arrow-right" onclick="moveSlider(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const track = document.getElementById('track-container');
+        const elements = document.querySelectorAll('.slider-element');
+        const firstClone = document.getElementById('clone-first');
+        const lastClone = document.getElementById('clone-last');
+        let currentSlide = 1;
+        const elementWidth = elements[0].clientWidth + 30; // Account for margin
+        const autoSlideInterval = 3000; // 3 seconds per slide
+
+        // Initialize track position
+        track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+
+        function moveSlider(direction) {
+            const totalItems = elements.length;
+
+            currentSlide += direction;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+
+            // Add logic for prev/next button behavior
+            track.addEventListener('transitionend', () => {
+                if (elements[currentSlide].id === firstClone.id) {
+                    // Reached the cloned first item, jump back to real first item
+                    track.style.transition = 'none';
+                    currentSlide = 1;
+                    track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+                } else if (elements[currentSlide].id === lastClone.id) {
+                    // Reached the cloned last item, jump to real last item
+                    track.style.transition = 'none';
+                    currentSlide = totalItems - 2; // Real last item position
+                    track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+                }
+            });
+        }
+
+        // Auto-slide function
+        function autoSlide() {
+            moveSlider(1); // Move to the next slide
+        }
+
+        // Set interval for auto-sliding
+        let autoSlideTimer = setInterval(autoSlide, autoSlideInterval);
+
+        // Pause auto-slide on mouse hover and resume on mouse leave
+        document.querySelector('.wrapper-track').addEventListener('mouseenter', () => {
+            clearInterval(autoSlideTimer); // Pause auto-slide
+        });
+
+        document.querySelector('.wrapper-track').addEventListener('mouseleave', () => {
+            autoSlideTimer = setInterval(autoSlide, autoSlideInterval); // Resume auto-slide
+        });
+    </script>
+</body>
+</html>
