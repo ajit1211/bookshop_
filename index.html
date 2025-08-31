@@ -11,59 +11,58 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
         }
 
+        /* NAVBAR */
         .custom-navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #fff;
-            padding: 10px 20px;
             background-color: ivory;
+            padding: 10px 20px;
+            flex-wrap: wrap;
         }
-
         .custom-navbar-left {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
-
         .custom-logo img {
-            height: 80px;
-            margin-right: 20px;
+            height: 60px;
+            margin-right: 10px;
         }
-
         .custom-search-bar {
-            width: 400px;
-            padding: 12px;
+            flex: 1;
+            min-width: 200px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-size: 15px;
+            font-size: 14px;
         }
-
         .custom-search-button {
             background-color: crimson;
             border: none;
-            padding: 12px;
+            padding: 8px 12px;
             cursor: pointer;
             margin-left: 5px;
             border-radius: 6px;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
         }
-
         .custom-navbar-right {
             display: flex;
             align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
+        /* DROPDOWN */
         .custom-dropdown {
             position: relative;
             display: inline-block;
         }
-
         .custom-account-icon {
             cursor: pointer;
             text-decoration: none;
@@ -71,7 +70,6 @@
             color: black;
             margin-right: 20px;
         }
-
         .custom-dropdown-content {
             display: none;
             position: absolute;
@@ -80,38 +78,36 @@
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
-
         .custom-dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 10px 14px;
             text-decoration: none;
             display: block;
             font-size: 14px;
         }
-
         .custom-dropdown-content a:hover {
             background-color: crimson;
             color: white;
             border-radius: 5px;
         }
-
         .custom-dropdown:hover .custom-dropdown-content {
             display: block;
         }
 
+        /* ICONS */
         .custom-cart-icon,
         .custom-wishlist-icon {
             margin-right: 20px;
-            font-size: 20px;
+            font-size: 18px;
             color: black;
             text-decoration: none;
         }
-
         .custom-cart-icon:hover,
         .custom-wishlist-icon:hover {
             color: crimson;
         }
 
+        /* NAV LINKS */
         .nav-links {
             display: flex;
             list-style-type: none;
@@ -119,77 +115,68 @@
             background-color: ivory;
             padding: 10px;
             border-bottom: 1px solid crimson;
+            flex-wrap: wrap;
         }
-
         .nav-links li {
-            margin: 0 10px;
+            margin: 5px 10px;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
-            padding: 10px;
+            font-size: 15px;
+            padding: 8px;
             border-right: 1px solid crimson;
         }
-
         .nav-links a:hover {
             background-color: crimson;
             color: white;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
+        /* PRODUCT TITLE */
         .product-title {
             color: crimson;
             background-color: cornsilk;
             text-align: center;
-            padding: 20px;
-            font-size: 24px;
+            padding: 15px;
+            font-size: 22px;
             font-weight: bold;
         }
 
+        /* SLIDER */
         .slider-container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding: 30px 0;
+            padding: 20px 0;
         }
-
         .heading-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: crimson;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-
-        .wrapper-track {
-            position: relative;
-        }
-
         .track-container {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-
         .slider-element {
-            min-width: 150px;
-            margin: 0 15px;
+            min-width: 120px;
+            margin: 0 10px;
+            flex-shrink: 0;
         }
-
         .slider-element img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
         }
-
         .author-title {
-            margin-top: 10px;
-            font-size: 14px;
+            margin-top: 8px;
+            font-size: 13px;
         }
-
         .arrow-left, .arrow-right {
             position: absolute;
             top: 50%;
@@ -197,110 +184,290 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 8px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
         }
+        .arrow-left { left: 0; }
+        .arrow-right { right: 0; }
 
-        .arrow-left {
-            left: 0;
-        }
-
-        .arrow-right {
-            right: 0;
-        }
-
-        .arrow-left:focus, .arrow-right:focus {
-            outline: none;
-        }
-
+        /* FOOTER */
         .hello {
             background-color: #f9f9f9;
-            padding: 40px 20px;
+            padding: 30px 20px;
             border-top: 1px solid #ddd;
         }
-
         .hi {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
         }
-
         .footer-section {
             margin: 10px;
+            text-align: center;
+            min-width: 120px;
         }
-
         .footer-section h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            font-size: 1.1em;
+            margin-bottom: 8px;
             color: crimson;
         }
-
         .footer-section ul {
             list-style: none;
+            padding: 0;
         }
-
         .footer-section ul li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-
         .footer-section ul li a {
             text-decoration: none;
             color: #333;
+            font-size: 14px;
         }
-
         .footer-section ul li a:hover {
             color: crimson;
         }
-
         .footer-social {
-            margin-top: 20px;
+            margin-top: 15px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
-
         .footer-social a img {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
         }
 
-        @media (max-width: 768px) {
-            .custom-search-bar {
-                width: 100%;
-                margin-left: 0;
-            }
-
+        /* RESPONSIVE DESIGN */
+        /* Extra Small Devices (Phones, <576px) */
+        @media (max-width: 575.98px) {
             .custom-navbar {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 10px;
             }
-
+            .custom-logo img {
+                height: 40px;
+            }
+            .custom-search-bar {
+                width: 100%;
+                min-width: unset;
+                margin: 5px 0;
+            }
+            .custom-search-button {
+                width: 100%;
+                margin-left: 0;
+                padding: 10px;
+            }
             .custom-navbar-right {
-                margin-top: 10px;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 5px;
             }
+            .custom-account-icon,
+            .custom-cart-icon,
+            .custom-wishlist-icon {
+                margin-right: 10px;
+                font-size: 16px;
+            }
+            .custom-dropdown-content {
+                min-width: 120px;
+                font-size: 12px;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+            }
+            .nav-links li {
+                margin: 5px 0;
+            }
+            .nav-links a {
+                font-size: 13px;
+                border-right: none;
+                padding: 5px;
+            }
+            .carousel-item img {
+                height: 150px;
+                object-fit: cover;
+            }
+            .product-title {
+                font-size: 18px;
+                padding: 10px;
+            }
+            .card {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+            .card-img-top {
+                height: 150px;
+                object-fit: cover;
+            }
+            .card-body {
+                padding: 10px;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+            .card-text {
+                font-size: 1rem;
+            }
+            .slider-container {
+                width: 95%;
+                padding: 10px 0;
+            }
+            .slider-element {
+                min-width: 80px;
+                margin: 0 5px;
+            }
+            .slider-element img {
+                width: 60px;
+                height: 60px;
+            }
+            .author-title {
+                font-size: 11px;
+            }
+            .arrow-left, .arrow-right {
+                font-size: 12px;
+                padding: 5px;
+            }
+            .footer-section {
+                min-width: 100%;
+                margin: 10px 0;
+            }
+            .footer-section h3 {
+                font-size: 1em;
+            }
+            .footer-section ul li a {
+                font-size: 12px;
+            }
+            .footer-social a img {
+                width: 24px;
+                height: 24px;
+            }
+        }
 
+        /* Small Devices (Tablets, 576px - 767.98px) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .custom-navbar {
+                padding: 10px 15px;
+            }
+            .custom-logo img {
+                height: 50px;
+            }
+            .custom-search-bar {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .custom-search-button {
+                padding: 8px 10px;
+            }
+            .custom-navbar-right {
+                justify-content: flex-start;
+                width: 100%;
+            }
             .nav-links {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .nav-links li {
-                margin: 5px 0;
+            .nav-links a {
+                font-size: 14px;
+                border-right: none;
             }
-
-            .hi {
-                flex-direction: column;
-                align-items: center;
+            .carousel-item img {
+                height: 200px;
+                object-fit: cover;
             }
-
+            .product-title {
+                font-size: 20px;
+            }
+            .card {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+            .card-img-top {
+                height: 180px;
+                object-fit: cover;
+            }
             .slider-element {
                 min-width: 100px;
             }
-
-            .arrow-left, .arrow-right {
-                font-size: 1.5em;
+            .slider-element img {
+                width: 80px;
+                height: 80px;
             }
+            .author-title {
+                font-size: 12px;
+            }
+            .footer-section {
+                min-width: 45%;
+            }
+        }
+
+        /* Medium Devices (Tablets/Laptops, 768px - 991.98px) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .custom-logo img {
+                height: 50px;
+            }
+            .custom-search-bar {
+                width: 100%;
+                margin-top: 5px;
+            }
+            .custom-navbar-right {
+                justify-content: flex-start;
+            }
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 14px;
+                border-right: 1px solid crimson;
+            }
+            .carousel-item img {
+                height: 250px;
+                object-fit: cover;
+            }
+            .card {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+            .card-img-top {
+                height: 200px;
+                object-fit: cover;
+            }
+            .slider-element img {
+                width: 90px;
+                height: 90px;
+            }
+            .footer-section {
+                min-width: 30%;
+            }
+        }
+
+        /* Large Devices (Desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .custom-navbar {
+                flex-direction: row;
+            }
+            .custom-search-bar {
+                min-width: 300px;
+            }
+            .nav-links {
+                flex-wrap: nowrap;
+            }
+            .carousel-item img {
+                height: 300px;
+                object-fit: cover;
+            }
+            .card-img-top {
+                height: 220px;
+                object-fit: cover;
+            }
+        }
+        body{
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -353,29 +520,29 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="asset/images/banner@1.jpg" class="d-block w-100" alt="Banner 1">
+                <img src="asset/images/banner@1.jpg" class="d-block w-100 h-auto" alt="Banner 1">
             </div>
             <div class="carousel-item">
-                <img src="asset/images/banner@2.jpg" class="d-block w-100" alt="Banner 2">
+                <img src="asset/images/banner@2.jpg" class="d-block w-100 h-auto" alt="Banner 2">
             </div>
             <div class="carousel-item">
-                <img src="asset/images/banner@3.jpg" class="d-block w-100" alt="Banner 3">
+                <img src="asset/images/banner@3.jpg" class="d-block w-100 h-auto" alt="Banner 3">
             </div>
             <div class="carousel-item">
-                <img src="asset/images/banner@4.jpg" class="d-block w-100" alt="Banner 4">
+                <img src="asset/images/banner@4.jpg" class="d-block w-100 h-auto" alt="Banner 4">
             </div>
         </div>
     </div>
 
     <div class="row mt-4">
-        <div class="col-md-12 text-center">
+        <div class="col-12 text-center">
             <h2 class="product-title">Our Products</h2>
         </div>
     </div>
 
     <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="asset/images/book4.html"><img src="asset/images/4.jpg" class="card-img-top" alt="Festive Hearts"></a>
                 <div class="card-body">
                     <h5 class="card-title">Festive Hearts</h5>
@@ -385,8 +552,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="asset/images/book3.html"><img src="asset/images/2.jpg" class="card-img-top" alt="Young Wizard"></a>
                 <div class="card-body">
                     <h5 class="card-title">Aaron Loeb</h5>
@@ -396,8 +563,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="asset/images/book2.html"><img src="asset/images/3.jpg" class="card-img-top" alt="Conquest of Flames"></a>
                 <div class="card-body">
                     <h5 class="card-title">Shawn Garcia</h5>
@@ -407,8 +574,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="asset/images/books.html"><img src="asset/images/1.jpg" class="card-img-top" alt="Soul"></a>
                 <div class="card-body">
                     <h5 class="card-title">Soul</h5>
@@ -421,8 +588,8 @@
     </div>
 
     <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="book5.html"><img src="asset/images/5.jpg" class="card-img-top" alt="Christmas Trail"></a>
                 <div class="card-body">
                     <h5 class="card-title">Christmas Trail</h5>
@@ -432,8 +599,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="book6.html"><img src="asset/images/6.jpg" class="card-img-top" alt="Stay With Me"></a>
                 <div class="card-body">
                     <h5 class="card-title">Stay With Me</h5>
@@ -443,8 +610,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="boook8.html"><img src="asset/images/8.jpg" class="card-img-top" alt="Walk Into The Shadow"></a>
                 <div class="card-body">
                     <h5 class="card-title">Walk Into The Shadow</h5>
@@ -454,8 +621,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
                 <a href="book7.html"><img src="asset/images/7.jpg" class="card-img-top" alt="The Whispering Throne"></a>
                 <div class="card-body">
                     <h5 class="card-title">The Whispering Throne</h5>
@@ -573,14 +740,17 @@
         const firstClone = document.getElementById('clone-first');
         const lastClone = document.getElementById('clone-last');
         let currentSlide = 1;
-        const elementWidth = elements[0].clientWidth + 30;
         const autoSlideInterval = 3000;
 
-        track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+        function updateSliderWidth() {
+            const elementWidth = elements[0].clientWidth + 30;
+            track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
+        }
 
         function moveSlider(direction) {
             const totalItems = elements.length;
             currentSlide += direction;
+            const elementWidth = elements[0].clientWidth + 30;
             track.style.transition = 'transform 0.5s ease-in-out';
             track.style.transform = `translateX(${-elementWidth * currentSlide}px)`;
 
@@ -610,6 +780,8 @@
         document.querySelector('.wrapper-track').addEventListener('mouseleave', () => {
             autoSlideTimer = setInterval(autoSlide, autoSlideInterval);
         });
+
+        window.addEventListener('resize', updateSliderWidth);
     </script>
     <script src="asset/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
